@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  
     <style>
         /* Kaushan+Script, oregano, sail */
         @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
@@ -575,11 +576,9 @@
 </head>
 
 <body>
- <iframe src="./hbd_music.mp3" allow="autoplay" style="display:none" id="iframeAudio">
-<audio autoplay loop  id="playAudio">
-    <source src="./hbd_music.mp3">
-</audio>
-</iframe> 
+    <audio loop  id="audio" controls style="display: none">
+        <source src="https://bazoka-system-app.s3.ap-southeast-1.amazonaws.com/Vizik/Music/Audio/Happy/happy-birthday-acoustic-spot-16196.mp3" type="audio/mpeg">
+    </audio>
     <canvas id="canvas"></canvas>
     <div id="merrywrap" class="merrywrap">
         <div class="giftbox">
@@ -1254,14 +1253,24 @@
         }
 
         window.onload = function () {
+            var autoRun = document.getElementById("audio")
             var merrywrap = document.getElementById("merrywrap");
             var box = merrywrap.getElementsByClassName("giftbox")[0];
             var step = 1;
             var stepMinutes = [500, 500, 200, 200];
             function init() {
                 box.addEventListener("click", openBox, false);
+               
             }
             function stepClass(step) {
+                if(step == 3){
+                 var auto =   alert("hello");
+                if(auto){
+                    autoRun.play()
+                }else {
+                    autoRun.play()
+                }
+                }
                 merrywrap.className = 'merrywrap';
                 merrywrap.className = 'merrywrap step-' + step;
             }
